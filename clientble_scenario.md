@@ -76,8 +76,8 @@ BleSDK.startBackgroundPayment(
 
 Чтобы разлогировать пользователя нужно выполнить код:
 
-```kotlin
-  BleSDK.logout(
+```swift
+  BleSDK.logout()
 ```
 
 ## Рекомендации по использованию
