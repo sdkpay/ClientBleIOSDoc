@@ -25,8 +25,6 @@ let request = SPaymentRequest(apiKey: apiKey, redirectUri: redirectUri)
            
 BleSDK.pay(request: request, completion: { state, localid, info in
     DispatchQueue.main.async {
-// При любом допустимом state, приложение может продолжать работу
-
         switch state {
             case .success:
                 print("Payment successful")
@@ -48,6 +46,8 @@ BleSDK.pay(request: request, completion: { state, localid, info in
 BleSDK.startBackgroundPayment(
     request: SPaymentRequest(apiKey: apiKey, redirectUri: redirectUri),
                 completion: { state, localId, info in
+
+// При любом state, приложение может продолжать работу
     DispatchQueue.main.async {
         switch state {
             case .success:
