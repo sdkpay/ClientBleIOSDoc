@@ -25,18 +25,17 @@ let request = SPaymentRequest(apiKey: apiKey, redirectUri: redirectUri)
            
 BleSDK.pay(request: request, completion: { state, localid, info in
     DispatchQueue.main.async {
+// При любом допустимом state, приложение может продолжать работу
+
         switch state {
             case .success:
                 print("Payment successful")
-                // Обновите UI, покажите успех
                 
             case .error:
                 print("Payment error")
-                // Покажите ошибку пользователю
                 
             case .cancel:
                 print("Payment cancelled by user")
-                // Обработайте отмену
             }
     }
 }
